@@ -23,9 +23,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function profile($username)
     {
-        //
+        $user = User::join('countries', 'users.country', '=', 'countries.id')
+                    ->select('users.id', 'users.name', 'users.last_name', 'users.username', 'users.email', 'countries.name as country')
+                    ->where('username', $username)->first();
+        return view('content.profile')->with('user', $user);
     }
 
     /**
