@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('frontpage')->unique(); //portada
+            $table->text('extract');
+            $table->longText('body');
+            $table->enum('status', [1,2])->default(1);
+            $table->foreignId('category')->references('id')->on('news_categories');
             $table->timestamps();
         });
     }

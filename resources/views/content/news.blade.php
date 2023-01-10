@@ -3,5 +3,5 @@
 @section('title', 'Noticias')
 
 @section('content')
-    <news-component />
+    <news-component :recent="{{$recent}}"/>
 @endsection
