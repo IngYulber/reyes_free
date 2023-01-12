@@ -50,7 +50,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{Auth::user()->username}}</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{{route('profile', ['username' => Auth::user()->username])}}" class="dropdown-item">Perfil</a>
+                        <a href="{{route('user.profile', ['username' => Auth::user()->username])}}" class="dropdown-item">Perfil</a>
                         <a href="team.html" class="dropdown-item">Configuración</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();

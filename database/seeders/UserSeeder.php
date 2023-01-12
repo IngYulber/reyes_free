@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Inga Lapa',
             'username' => 'easye',
             'email' => 'johningalapa@gmai.com',
-            'password' => bcrypt('12345678'),
+            'password' => '12345678',
             'country' => 1
 
         ]);

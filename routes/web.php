@@ -14,11 +14,17 @@ Route::get('/', function () {
 Route::get('/login', [AuthenticationController::class, 'index']);;
 Route::post('/login', [AuthenticationController::class, 'singUp']);;
 Route::get('/countries', [UtilController::class, 'countries']);
-Route::get('/tags', [UtilController::class, 'tags']);
-Route::get('/news-categories', [UtilController::class, 'newsCategories']);
 Route::post('/register', [UserController::class, 'store']);
 Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
-Route::get('/news', [NewsController::class, 'index'])->name('news');
-Route::get('/news/all', [NewsController::class, 'getAll'])->name('news.all');
-Route::get('/user/{username}', [UserController::class, 'profile'])->name('profile');
 
+Route::prefix('user')->group(function (){
+    Route::get('/{username}', [UserController::class, 'profile'])->name('user.profile');
+});
+
+Route::prefix('news')->group(function (){
+    Route::get('', [NewsController::class, 'index'])->name('news');
+    Route::get('/categories', [UtilController::class, 'newsCategories'])->name('news.categories');
+    Route::get('/all', [NewsController::class, 'getAll'])->name('news.all');
+    Route::get('/tags', [UtilController::class, 'tags'])->name('news.tags');
+    Route::get('/{slug}', [NewsController::class, 'detail'])->name('news.detail');
+});

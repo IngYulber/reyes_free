@@ -107,7 +107,7 @@ export default {
     },
 
     async getCategories(){
-        axios.get('/news-categories').then((response) => {
+        axios.get('/news/categories').then((response) => {
             this.categories = response.data.data;
         })
     }

@@ -29,4 +29,10 @@ class NewsController extends Controller
 
         return JsonResource::collection($news);
     }
+
+    public function detail($slug){
+        $detail = News::where('slug', $slug)->first();
+
+        return view('content.news_detail', compact('detail'));
+    }
 }
