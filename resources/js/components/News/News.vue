@@ -24,7 +24,7 @@
               <img
                 src="https://mundofreestyle.com/wp-content/uploads/2019/06/aczino-chuty.jpg"
                 alt="banner"
-                class="img-fluid"
+                class="img-fluid w-100"
               />
               <div class="banner-content">
                 <div class="badge badge-danger fs-12 fo nt-weight-bold my-3">
