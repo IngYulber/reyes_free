@@ -31,8 +31,29 @@ class NewsController extends Controller
     }
 
     public function detail($slug){
-        $detail = News::where('slug', $slug)->first();
+        $detail = News::join('news_categories','news_categories.id','=','news.category')
+                        ->select('news.*','news_categories.name as category_name')
+                        ->where('news.slug', $slug)
+                        ->first();
 
-        return view('content.news_detail', compact('detail'));
+        $next_id = $detail->id + 1;
+        $previous_id = $detail->id - 1;
+        
+        $next = News::where('id', $next_id)
+                            ->select('title','slug')                    
+                            ->first();
+
+        $previous = News::where('id', $previous_id)
+                            ->select('title','slug')                    
+                            ->first();
+
+        $related = News::where('category', $detail->category)
+                        ->where('status',2)
+                        ->where('id','!=',$detail->id)
+                        ->latest()
+                        ->take(4)
+                        ->get();
+
+        return view('content.news_detail', compact('detail','related','next','previous'));
     }
 }
