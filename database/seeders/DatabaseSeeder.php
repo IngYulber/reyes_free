@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Artist;
+use App\Models\ArtistType;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\NewsTag;
@@ -21,11 +23,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CountrySeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(ArtistTypeSeeder::class);
 
 
         NewsCategory::factory(10)->create();
         NewsTag::factory(10)->create();
         News::factory(30)->create();
-        NewsTagsDetail::factory(100)->create();
+        NewsTagsDetail::factory(10)->create();
+        Artist::factory(10)->create();
     }
 }
