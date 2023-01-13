@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilController;
@@ -27,4 +28,8 @@ Route::prefix('news')->group(function (){
     Route::get('/all', [NewsController::class, 'getAll'])->name('news.all');
     Route::get('/tags', [UtilController::class, 'tags'])->name('news.tags');
     Route::get('/{slug}', [NewsController::class, 'detail'])->name('news.detail');
+});
+
+Route::prefix('artists')->group(function (){
+    Route::get('', [ArtistController::class, 'index'])->name('artists');
 });

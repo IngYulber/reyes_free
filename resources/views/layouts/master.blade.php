@@ -38,7 +38,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">EXPLORAR</a>
                     <div class="dropdown-menu m-0">
                         <a href="testimonial.html" class="dropdown-item">Discusiones</a>
-                        <a href="price.html" class="dropdown-item">Artistas</a>
+                        <a href="{{route('artists')}}" class="dropdown-item">Artistas</a>
                         <a href="team.html" class="dropdown-item">Rimas</a>
                         <a href="open.html" class="dropdown-item">Competiciones</a>
                         <a href="404.html" class="dropdown-item">Encuestas</a>

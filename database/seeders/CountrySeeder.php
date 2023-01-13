@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +15,7 @@ class CountrySeeder extends Seeder
     public function run()
     {
 
-        $countries = array("México", "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda",
+    /*     $countries = array("México", "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda",
             "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas",
             "Bangladés", "Barbados", "Baréin", "Bélgica", "Belice", "Benín", "Bielorrusia", "Birmania", "Bolivia",
             "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután",
@@ -38,7 +37,12 @@ class CountrySeeder extends Seeder
             "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Suazilandia", "Sudán", "Sudán del Sur", "Suecia",
             "Suiza", "Surinam", "Tailandia", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago",
             "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela",
-            "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue");
+            "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue"); */
+
+        
+        $countries = array("México", "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda",
+            "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas",
+            "Bangladés", "Barbados");
 
         foreach ($countries as $country){
             DB::table('countries')->insert([
