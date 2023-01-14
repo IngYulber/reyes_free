@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('date_of_birth');
             $table->longText('description');
             $table->string('photo');
+            $table->enum('status', [1,2,3])->default(1); # 1 = active, 2 = retired;
             $table->foreignId('country')->references('id')->on('countries');
             $table->foreignId('type')->references('id')->on('artist_types');
             $table->timestamps();

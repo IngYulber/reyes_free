@@ -31,13 +31,12 @@
           <div class="row">
             <div class="col-12 my-2">
               <div class="row">
-                <div class="col-xl-7 col-md-6 col-3 text-center">
+                <div class="col-xl-8 col-md-6 col-3 text-center">
                   <p class="mt-2" v-show="searchingActive">
                     {{ dataPaginated.length }} resultados
                   </p>
                 </div>
-                <div class="col-xl-5 col-md-6 col-9 mb-4">
-                  <div class="input-group">
+                <div class="col-xl-4 col-md-6 col-9 mb-4">
                     <div class="form-outline">
                       <input
                         type="search"
@@ -46,10 +45,6 @@
                         class="form-control"
                         v-model="searching"
                       />
-                    </div>
-                    <button type="button" class="btn btn-primary">
-                      <i class="fas fa-search"></i>
-                    </button>
                   </div>
                 </div>
               </div>
