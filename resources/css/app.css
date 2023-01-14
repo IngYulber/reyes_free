@@ -51,6 +51,9 @@
     font-weight: normal;
 }
 
+.btn-round{
+    border-radius: 10px !important;
+}
 
 /*** Navbar ***/
 .navbar .dropdown-toggle::after {

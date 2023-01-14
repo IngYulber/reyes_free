@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
-use App\Models\News;
-use App\Models\NewsCategory;
 use App\Models\NewsTag;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UtilController extends Controller
@@ -25,9 +22,5 @@ class UtilController extends Controller
         return JsonResource::collection($tags);
     }
 
-    public function newsCategories()
-    {
-        $categories = NewsCategory::withCount('news')->orderBy('news_count', 'desc')->get();
-        return JsonResource::collection($categories);
-    }
+
 }
